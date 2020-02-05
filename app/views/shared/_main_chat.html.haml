@@ -1,0 +1,24 @@
+.chat-main
+  .chat-main__top
+    .chat-main__top__left
+      %h2.chat-main__top__left__group test
+      %ul.chat-main__top__left__group__list
+        Member:
+        %li.chat-main__top__left__group__list__men masa
+    .chat-main__top__right
+      = link_to "#" do
+        Edit
+  .chat-main__center
+    .chat-main__center__a
+      %p.chat-main__center__a__name masa
+      %p.chat-main__center__a__day 2019/11/20(Wed)17:43:01
+    .chat-main__center__kiji おはよう！
+  .chat-main__bottom
+    %form.message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          <i class="fa fa-image"></i>
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn"}
+        
