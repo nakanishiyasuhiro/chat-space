@@ -4,13 +4,13 @@
       %p.side_bar__user-name__top-items__name masa
       %ul.side_bar__user-name__top-items__icons
         %li.side_bar__user-name__top-items__icons__new-group
-          %a(href="#")
-            <i class="fa fa-edit"></i>
+          = link_to "#" do  
+            = fa_icon 'edit'
         %li.side_bar__user-name__top-items__icons__edit-user
-          %a(href="#")
-            <i class="fa fa-cog"></i>
+          = link_to "#" do  
+            = fa_icon 'cog'
   .side_bar__group
-    %a(href="#")
+    = link_to "#" do
       .side_bar__group__a
         %p.side_bar__group__a__name techcamp
         %p.side_bar__group__a__message まだメッセージはありません
