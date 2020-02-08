@@ -105,6 +105,9 @@ html,body{
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll;
+    .message{
+      margin-bottom: 40px;
+    }
     &__a{
       display: flex;
       &__name{
@@ -131,10 +134,10 @@ html,body{
 
     form {
       display: flex;
+      position: relative;
       .input-box{
         display: flex;
         width: 100%;
-        position: relative;
         &__text {
           height: 50px;
           width: 100%;
