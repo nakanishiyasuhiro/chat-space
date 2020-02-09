@@ -2,52 +2,52 @@ $(function(){
   var buildHTML = function(message) {
     if (message.content && message.image) {
       var html =
-      `<div class="message" data-message-id=` + message.id + `>` +
-         `<div class="chat-main__center__a">` +
-           `<p class="chat-main__center__a__name">` +
-             message.user_name +
-           `</p>` +
-           `<p class="chat-main__center__a__day">` +
-             message.created_at +
-           `</p>` +
-         `</div>` +
-         `<div class="chat-main__center__kiji">` +
-           `<p class="chat-main__center__kiji__content">` +
-             message.content +
-           `</p>` +
-         `</div>` +
-         `<img src="` + message.image + `"class=input-box__image" >` +
-       `</div>`
+      `<div class="message" data-message-id=${message.id}>
+        <div class="chat-main__center__a">
+          <p class="chat-main__center__a__name">
+            ${message.user_name}
+          </p>
+          <p class="chat-main__center__a__day">
+            ${message.created_at}
+          </p>
+        </div>
+        <div class="chat-main__center__kiji">
+          <p class="chat-main__center__kiji__content">
+            ${message.content}
+          </p>
+        </div>
+        <img src=${message.image} "class=input-box__image" >
+      </div>`
     } else if (message.content) {
       var html =
-      `<div class="message" data-message-id=` + message.id + `>` +
-        `<div class="chat-main__center__a">` +
-          `<p class="chat-main__center__a__name">` +
-            message.user_name +
-          `</p>` +
-          `<p class="chat-main__center__a__day">` +
-            message.created_at +
-          `</p>` +
-        `</div>` +
-        `<div class="chat-main__center__kiji">` +
-          `<p class="chat-main__center__kiji__content">` +
-            message.content +
-          `</p>` +
-        `</div>` +
-       `</div>`
+      `<div class="message" data-message-id=${message.id}>
+        <div class="chat-main__center__a">
+          <p class="chat-main__center__a__name">
+            ${message.user_name}
+          </p>
+          <p class="chat-main__center__a__day">
+            ${message.created_at}
+          </p>
+        </div>
+        <div class="chat-main__center__kiji">
+          <p class="chat-main__center__kiji__content">
+            ${message.content}
+          </p>
+        </div>
+      </div>`
     } else if (message.image) {
       var html =
-      `<div class="message" data-message-id=` + message.id + `>` +
-        `<div class="chat-main__center__a">` +
-          `<p class="chat-main__center__a__name">` +
-            message.user_name +
-          `</p>` +
-          `<p class="chat-main__center__a__day">` +
-            message.created_at +
-          `</p>` +
-        `</div>` +
-        `<img src="` + message.image + `"class=input-box__image" >` +
-      `</div>`
+      `<div class="message" data-message-id=${message.id}>
+        <div class="chat-main__center__a">
+          <p class="chat-main__center__a__name">
+            ${message.user_name}
+          </p>
+          <p class="chat-main__center__a__day">
+            ${message.created_at}
+          </p>
+        </div>
+        <img src=${message.image} "class=input-box__image" >
+      </div>`
     };
     return html;
   };
@@ -90,12 +90,12 @@ $(function(){
 
     .done(function(messages) {
       if (messages.length !== 0) {
-      var insertHTML = '';
-      $.each(messages, function(i, message) {
-        insertHTML += buildHTML(message)
-      });
-      $('.chat-main__center').append(insertHTML);
-      $('.chat-main__center').animate({ scrollTop: $('.chat-main__center')[0].scrollHeight});
+        var insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+        });
+        $('.chat-main__center').append(insertHTML);
+        $('.chat-main__center').animate({ scrollTop: $('.chat-main__center')[0].scrollHeight});
       }
     })
 
